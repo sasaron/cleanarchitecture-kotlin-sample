@@ -48,6 +48,7 @@ dependencies {
     testImplementation("io.mockk:mockk:${mockk_version}")
 
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${detekt_version}")
+    implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.5.10"
 }
 
 test {
