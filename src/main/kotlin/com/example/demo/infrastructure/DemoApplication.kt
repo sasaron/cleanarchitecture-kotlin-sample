@@ -1,4 +1,4 @@
-package sasaron.cleanarchitecturekotlinsample
+package com.example.demo.infrastructure
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -6,8 +6,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 @SpringBootApplication
 @EnableSwagger2
-class CleanarchitecturekotlinsampleApplication
+class DemoApplication
 
 fun main(args: Array<String>) {
-	runApplication<CleanarchitecturekotlinsampleApplication>(*args)
+	runApplication<DemoApplication>(*args)
 }

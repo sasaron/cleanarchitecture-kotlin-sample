@@ -18,7 +18,7 @@ apply plugin: 'kotlin'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'idea'
 
-group = "sasaron"
+group = "com.example"
 java.sourceCompatibility = JavaVersion.VERSION_16
 
 repositories {
