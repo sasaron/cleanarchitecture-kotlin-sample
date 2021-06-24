@@ -2,6 +2,7 @@ buildscript {
     ext.detekt_version = "1.17.1"
     ext.junit_version = "5.7.2"
     ext.mockk_version = "1.11.0"
+    ext.swagger_version = "3.0.0"
 }
 
 plugins {
@@ -32,6 +33,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
+
+    implementation("io.springfox:springfox-boot-starter:${swagger_version}")
+    implementation("io.springfox:springfox-swagger-ui:${swagger_version}")
+
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
     runtimeOnly("mysql:mysql-connector-java")
