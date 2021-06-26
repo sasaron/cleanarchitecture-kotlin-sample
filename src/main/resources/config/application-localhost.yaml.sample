@@ -13,6 +13,5 @@ spring:
       enabled: true
       exclude: "static/**, public/**"
       additional-exclude: "**/*.xml"
-
 server:
   port: 80

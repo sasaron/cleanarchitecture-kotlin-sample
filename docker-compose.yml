@@ -33,3 +33,13 @@ services:
       - "8080:8080"
     profiles:
       - "uml"
+  swagger-editor:
+    image: "swaggerapi/swagger-editor"
+    ports:
+      - "8081:8080"
+    profiles:
+      - "swagger"
+    volumes:
+      - "./src/main/resources/openapi/swagger.yaml:/tmp/swagger.yaml"
+    environment:
+      - "SWAGGER_FILE=/tmp/swagger.yaml"
