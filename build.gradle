@@ -3,6 +3,7 @@ buildscript {
     ext.junit_version = "5.7.2"
     ext.mockk_version = "1.11.0"
     ext.swagger_version = "3.0.0"
+    ext.openapi_version = "5.1.1"
 }
 
 plugins {
@@ -12,6 +13,7 @@ plugins {
     id "org.jetbrains.kotlin.plugin.spring" version "1.5.10"
     id 'com.google.cloud.tools.jib' version '3.0.0'
     id "io.gitlab.arturbosch.detekt" version "${detekt_version}"
+    id "org.openapi.generator" version "${openapi_version}"
 }
 
 apply plugin: 'kotlin'
@@ -34,6 +36,7 @@ dependencies {
 
     implementation("io.springfox:springfox-boot-starter:${swagger_version}")
     implementation("io.springfox:springfox-swagger-ui:${swagger_version}")
+    implementation("org.openapitools:openapi-generator-gradle-plugin:${openapi_version}")
 
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -46,7 +49,6 @@ dependencies {
     testImplementation("io.mockk:mockk:${mockk_version}")
 
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${detekt_version}")
-    implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.5.10"
 }
 
 test {
@@ -77,8 +79,15 @@ idea {
     }
 }
 
+openApiGenerate {
+    generatorName = "kotlin"
+    inputSpec = "$rootDir/src/main/resources/openapi/swagger.yaml".toString()
+    outputDir = "$rootDir/src/main/generated/".toString()
+    apiPackage = "com.example.demo"
+}
+
 jib {
-    from {
+     from {
         image = 'openjdk:16'
     }
     to {
