@@ -86,8 +86,9 @@ openApiGenerate {
     apiPackage = "com.example.demo.adapter.openapi.controller"
     modelPackage = "com.example.demo.adapter.model"
     additionalProperties = [
-            interfaceOnly : true,
-            serviceInterface: true,
+//            interfaceOnly : true,
+            serviceImplementation: true,
+//             serviceInterface: true,
             gradleBuildFile: false,
     ]
 }
