@@ -120,7 +120,6 @@ paths:
       description: ''
       operationId: getUserList
       produces:
-        - application/xml
         - application/json
       responses:
         '200':

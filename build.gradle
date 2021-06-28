@@ -80,10 +80,16 @@ idea {
 }
 
 openApiGenerate {
-    generatorName = "kotlin"
+    generatorName = "kotlin-spring"
     inputSpec = "$rootDir/src/main/resources/openapi/swagger.yaml".toString()
-    outputDir = "$rootDir/src/main/generated/".toString()
-    apiPackage = "com.example.demo"
+    outputDir = "$rootDir".toString()
+    apiPackage = "com.example.demo.adapter.openapi.controller"
+    modelPackage = "com.example.demo.adapter.model"
+    additionalProperties = [
+            interfaceOnly : true,
+            serviceInterface: true,
+            gradleBuildFile: false,
+    ]
 }
 
 jib {
